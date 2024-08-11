@@ -1,23 +1,19 @@
+## Gradient Descent Summary
+### We begin by computing the gradient with respect to our parameters w and b:
+### **Compute Gradient**
+ - #### Description: Compute gradient returns the gradient for every w parameter and b parameter for each training example, first looping through "m" amount of times, and thereafter a nestood loop of "j" iterations to retrieve the gradient of every feature coefficient. Which looks as following:
+     $$\frac{dJ(w,b)^{(i)}}{db} = (f_{w,b}(x^{(i)}) - y^{(i)})$$
 
-## Gradient descent summary
-So far in this course, you have developed a linear model that predicts $f_{w,b}(x^{(i)})$:
-$$f_{w,b}(x^{(i)}) = wx^{(i)} + b \tag{1}$$
-In linear regression, you utilize input training data to fit the parameters $w$,$b$ by minimizing a measure of the error between our predictions $f_{w,b}(x^{(i)})$ and the actual data $y^{(i)}$. The measure is called the $cost$, $J(w,b)$. In training you measure the cost over all of our training samples $x^{(i)},y^{(i)}$
-$$J(w,b) = \frac{1}{2m} \sum\limits_{i = 0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})^2\tag{2}$$ 
+     $$\frac{dJ(w,b)^{(i)}}{dw} = (f_{w,b}(x^{(i)}) - y^{(i)})x_j^{(i)}$$
+   #### And at last return the total gradient from all training examples:
+   $$\frac{\partial J(w,b)}{\partial b}  = \frac{1}{m} \sum\limits_{i = 0}^{m-1} \frac{\partial J(w,b)}{\partial b}^{(i)}$$
+    
+    $$\frac{\partial J(w,b)}{\partial w}  = \frac{1}{m} \sum\limits_{i = 0}^{m-1} \frac{\partial J(w,b)}{\partial w}^{(i)}$$
 
-*gradient descent* is described as:
-
-$$\begin{align*} \text{repeat}&\text{ until convergence:} \; \lbrace \newline
-\;  w &= w -  \alpha \frac{\partial J(w,b)}{\partial w} \tag{3}  \; \newline 
- b &= b -  \alpha \frac{\partial J(w,b)}{\partial b}  \newline \rbrace
-\end{align*}$$
-where, parameters $w$, $b$ are updated simultaneously.  
-The gradient is defined as:
-$$
-\begin{align}
-\frac{\partial J(w,b)}{\partial w}  &= \frac{1}{m} \sum\limits_{i = 0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})x^{(i)} \tag{4}\\
-  \frac{\partial J(w,b)}{\partial b}  &= \frac{1}{m} \sum\limits_{i = 0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)}) \tag{5}\\
-\end{align}
-$$
-
-Here *simultaniously* means that you calculate the partial derivatives for all the parameters before updating any of the parameters.
+### Thereafter can we apply our newfound gradient values into the gradient descent process:
+ 
+### **Gradient descent**
+  - #### Description: Gradient descent is then iteratively used to find the optimal w,b parameter values. It does this by iterating x amount of times, starting with updating the gradient of each parameter, thanks to the "compute gradient" function. Thereafter w, and b parameters are updated as following:
+      $$w = w-\alpha *  \frac{\partial J(w,b)}{\partial w}$$
+      $$b = w-\alpha *  \frac{\partial J(w,b)}{\partial b}$$
+    #### in this case the "=" is not used as the equality sign, but as the assignment operator. w is an array in this case, where its dimension "n" is corresponds to quantity of features.
