@@ -1,5 +1,5 @@
 ## Gradient Descent Summary
-###### Gradient descent has the goal of optimizing our parameters w and b, in our linear regression model which looks as following: $f_{w,b}(\vec{x}) = \vec{w} \cdot \vec{x} + b$ to minimize our following cost function, which is the mean squared error function: $J(w,b) = \frac{1}{2m} \sum_{i=1}^{m}(f_{w,b}(x^{(i)}) - y^{(i)})^2$. The below image visualizes this process:
+#### Gradient descent has the goal of optimizing our parameters w and b, in our linear regression model which looks as following: $f_{w,b}(\vec{x}) = \vec{w} \cdot \vec{x} + b$ to minimize our following cost function, which is the mean squared error function: $J(w,b) = \frac{1}{2m} \sum_{i=1}^{m}(f_{w,b}(x^{(i)}) - y^{(i)})^2$. The below image visualizes this process:
 
 ![image visualizing the process of gradient descent](https://github.com/TernFolbaek/gradient-descent/blob/main/gd-visualization.png)
 ##### The code walk-through will be available in gradient-descent.ipyng
