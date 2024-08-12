@@ -1,4 +1,5 @@
 ## Gradient Descent Summary
+##### The code walk-through will be available in gradient-descent.ipyng
 ### We begin by computing the gradient with respect to our parameters w and b:
 ### **Compute Gradient**
  - #### Description: Compute gradient returns the gradient for every w parameter and b parameter for each training example, first looping through "m" amount of times, and thereafter a nestood loop of "j" iterations to retrieve the gradient of every feature coefficient. Which looks as following:
